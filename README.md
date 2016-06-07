@@ -1,6 +1,12 @@
 # single_page_router_scroll
 A Higher Order Component that works with react router to update the router on scroll and also scrolls to components on page.
 
+Notes - 
+	Each subcomponent or 'page' must be given data attribute with data-url of the path. Must also give each 'page' a ref.
+	This is best used with react router, but can be used without as the component uses History API for messing with browser history/url/state.
+	
+If you are using react router, please use v2.4.0 as this component uses the router context object in order to update router state.
+
 <h2>Demo</h2>
 
 ```
@@ -40,3 +46,66 @@ class Home extends React.Component {
 export default Scroll(Home);
 
 ```
+
+
+<h2>Main App Usage</h2>
+
+```
+import {withRouter} from 'react-router'
+
+class App extends React.Component {
+	static childContextTypes = {
+		router: React.PropTypes.object.isRequrie,
+	};
+
+	constructor(props) {
+		super(props);
+	};
+	
+	getChildContext() {
+		return {
+			router: this.props.router,
+		}
+	}
+	
+	render() {
+		return(
+			<div className="page">
+				{ React.cloneElement(this.props.children, {
+            		className: `page`,
+    			}) }
+    		</div>
+		)
+	}
+}
+```
+
+<h2>React Router SetUp</h2>
+
+```
+import App from './components/containers/App.js';
+import Home from './components/views/Home.js;
+import {
+  browserHistory,
+  hashHistory,
+  IndexRoute,
+  Redirect,
+  Route,
+  Router,
+  applyRouterMiddleware
+} from 'react-router';
+
+class AppInitializer {
+	run() {
+		ReactDOM.render( 
+			(<Router history= {window.history.pushState ? browserHistory : hashHistory }>
+				<Route path="/" component={App} >
+					<IndexRoute component={Home} />
+				</Route>
+			</Router>), document.querySelector('.wrapper')
+		)
+	}
+}
+
+```
+
