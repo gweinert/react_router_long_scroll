@@ -1,0 +1,44 @@
+{
+  "name": "single_page_router_scroll",
+  "version": "1.0.0",
+  "description": "A Higher Order Component that works with react router to update router on scroll and scrolls to components on page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scroll",
+    "react",
+    "react-router",
+    "page-scroll",
+    "single",
+    "page",
+    "router",
+    "single-page",
+    "react-component"
+  ],
+  "author": "Garrett Weinert",
+  "license": "MIT",
+  "devDependencies": {
+      "autoprefixer-loader": "^3.1.0",
+      "babel-core": "^6.3.15",
+      "babel-loader": "^6.2.0",
+      "babel-plugin-transform-class-properties": "^6.5.2",
+      "babel-plugin-transform-es2015-classes": "^6.5.2",
+      "babel-preset-es2015": "^6.3.13",
+      "babel-preset-react": "^6.3.13",
+      "babel-preset-stage-0": "^6.3.13",
+      "css-loader": "^0.23.0",
+      "extract-text-webpack-plugin": "^0.9.1",
+      "file-loader": "^0.8.5",
+      "image-webpack-loader": "^1.6.2",
+      "import-glob-loader": "^1.1.0",
+      "json-loader": "^0.5.4",
+      "node-sass": "^3.4.2",
+      "rimraf": "^2.4.4",
+      "sass-loader": "^3.1.2",
+      "style-loader": "^0.13.0",
+      "webpack": "^1.12.9",
+      "webpack-dev-server": "^1.14.0"
+    }
+}

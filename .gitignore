@@ -1,0 +1,13 @@
+.idea/
+_notes/
+admin/
+api/
+content/
+node_modules/
+tmp/
+*.sublime-project
+*.sublime-workspace
+*.log
+dwsync.xml
+sitemap.xml
+credentials.json
