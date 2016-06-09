@@ -2,10 +2,25 @@
 A Higher Order Component that works with react router to update the router on scroll and also scrolls to components on page.
 
 Notes - 
-	Each subcomponent or 'page' must be given data attribute with data-url of the path. Must also give each 'page' a ref.
+	Each subcomponent or 'page' that you want to be scrolled to/ router updated if on screen must have data-path if normal html or dataPath if it is a React Component
 	This is best used with react router, but can be used without as the component uses History API for messing with browser history/url/state.
+
+	The HOC needs the window's pathname passed it as a prop
 	
 If you are using react router, please use v2.4.0 as this component uses the router context object in order to update router state.
+
+<h2>API</h2>
+
+<h3>Callbacks</h3>
+These can be called in the wrapped component or can be called by parent component
+
+onScroll(): this is called on every window scroll event
+
+onFinishedAnimatedScroll(): callback after window url updates and window scrolls to that component
+
+percentageOnScreen: Must be 1.0 or less. Used as the percentage of the screen height from bottom where it is used to see if the component is inside viewheight of the app and it will update the router/route.
+					So, 0.5 will be if component takes up at least 50% of screen height
+					0.7, will update if component takes up 70% of screen height
 
 <h2>Demo</h2>
 
@@ -17,6 +32,14 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props)
 	}
+
+	onScroll() {
+		console.log("our app is being scrolled")
+	}
+
+	onFinishedAnimatedScroll() {
+		console.log("just finished scrolling to component")
+	}
 	
 	render() {
 		
@@ -24,12 +47,12 @@ class Home extends React.Component {
 			<div className="" >
 				
 				// all "sections" need a data-path attribute and a ref
-				<div className="about" data-path="/about" ref="about">
+				<div className="about" data-path="/about">
 					<p>Stuff</p>
 					<p>More Stuff</p>
 				</div>
 				
-				<div className="contact data-path="/contact" ref="contact">
+				<div className="contact data-path="/contact" >
 					<form>
 						<input type="email" id="email_signup" />
 					</form>
@@ -78,6 +101,8 @@ class App extends React.Component {
 		)
 	}
 }
+
+export default withRouter(App)
 ```
 
 <h2>React Router SetUp</h2>
