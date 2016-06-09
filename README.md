@@ -7,9 +7,9 @@ Setup Notes -
 	However, if it is a react component
 	`<Component dataPath="/my-component" {...this.props}/>`
 	
-	The HOC needs the window's pathname passed it as a prop
-
-	This is best used with react router, but can be used without as the component uses History API for messing with browser history/url/state.
+	The HOC needs the window url pathname passed it as a prop
+	
+	Requires react router
 	
 If you are using react router, please use v2.4.0 as this component uses the router context object in order to update router state.
 
