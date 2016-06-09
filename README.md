@@ -2,14 +2,11 @@
 A Higher Order Component that works with react router to automatically update the router if the component is on screen and also scrolls to components on page based on current route.
 
 Setup Notes - 
-	Each subcomponent or 'page' that needs to be scrolled to or router must be aware of must have data-path attribute. 
-	`<div id="about" data-path="/about"></div>`\n
-	However, if it is a react component
-	`<Component dataPath="/my-component" {...this.props}/>`
-	
-	The HOC needs the window url pathname passed it as a prop
-	
-	Requires react router
+	<p>Each subcomponent or 'page' that needs to be scrolled to or router must be aware of must have data-path attribute. 
+	`<div id="about" data-path="/about"></div>`</p>
+	<p>However, if it is a react component
+	`<Component dataPath="/my-component" {...this.props}/>`</p>
+	<p>The HOC needs the window url pathname passed it as a prop. Requires react router</p>
 	
 If you are using react router, please use v2.4.0 as this component uses the router context object in order to update router state.
 
