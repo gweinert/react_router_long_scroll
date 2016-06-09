@@ -3,7 +3,7 @@ A Higher Order Component that works with react router to automatically update th
 
 Setup Notes - 
 	Each subcomponent or 'page' that needs to be scrolled to or router must be aware of must have data-path attribute. 
-	`<div id="about" data-path="/about"></div>`/n
+	`<div id="about" data-path="/about"></div>`\n
 	However, if it is a react component
 	`<Component dataPath="/my-component" {...this.props}/>`
 	
