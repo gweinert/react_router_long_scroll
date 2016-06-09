@@ -2,8 +2,14 @@
 A Higher Order Component that works with react router to automatically update the router if the component is on screen and also scrolls to components on page based on current route.
 
 Setup Notes:
-	<p>Using NPM add this line to dependencies section of package.json `"single_page_router_scroll: "https://github.com/gweinert/single_page_router_scroll"`</p>
-	<p>Using Bower: `bower install https://github.com/gweinert/single_page_router_scroll`</p>
+	<p>Using NPM add this line to dependencies section of package.json 
+		```
+			"dependencies" : {
+			   "single_page_router_scroll" : "https://github.com/gweinert/single_page_router_scroll"
+			}
+		```
+	</p>
+	<p>Using Bower: `bower install https://github.com/gweinert/single_page_router_scroll```</p>
 	<p>Each subcomponent or 'page' that needs to be scrolled to or router must be aware of must have data-path attribute. 
 	`<div id="about" data-path="/about"></div>`</p>
 	<p>However, if it is a react component
